@@ -1,0 +1,16 @@
+# Web_Api_Scaffolder
+uses postgres... for now
+
+## TODO
+- add generic abstract repository
+- add support for different databases/repositories
+- add mediatR
+
+## Dependencies:
+- shell + unix tools
+- core 5.0
+- postgres/psql
+- make
+
+## Usage:
+1: `$ make webapp`
