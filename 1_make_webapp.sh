@@ -40,7 +40,6 @@ dotnet add reference ../$project_name.Data
 
 # CORE
 cd ../$project_name.Core
-#dotnet add reference ../$project_name.Data
 
 # DATA
 cd ../$project_name.Data

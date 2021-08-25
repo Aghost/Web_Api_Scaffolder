@@ -43,25 +43,21 @@ db_script="populate_db.sh"
 
 replaceWords() {
     old_word='PROJECTNAME'
-    new_word=$project_name
     for infile in $coremodels $dbcontext $controllers $services $interfaces $appsettings $appsettings_dev $startup $program 'Makefile'; do
-        sed -i s/$old_word/$new_word/g $infile
+        sed -i s/$old_word/$project_name/g $infile
     done
 
     old_word='CHILDITEM'
-    new_word=$childitem
     for infile in $coremodels $dbcontext $controllers $services $interfaces $startup $db_script; do
-        sed -i s/$old_word/$new_word/g $infile
+        sed -i s/$old_word/$childitem/g $infile
     done
 
     old_word='ITEM'
-    new_word=$item
     for infile in $coremodels $dbcontext $controllers $services $interfaces $startup $db_script; do
-        sed -i s/$old_word/$new_word/g $infile
+        sed -i s/$old_word/$item/g $infile
     done
 
     old_word='iTEM'
-    #echo "${input,}"
     new_word=`echo "$item" | tr '[A-Z]' '[a-z]'`
     for infile in $coremodels $dbcontext $controllers $services $interfaces; do
         sed -i s/$old_word/$new_word/g $infile

@@ -13,4 +13,10 @@ uses postgres... for now
 - make
 
 ## Usage:
+0: change user/password settings in 6_sql_script.sh and in appsettings.json
 1: `$ make webapp`
+2: cd webappnamefolder
+3: `$ make migration mname=migrationname`
+4: `$ make db`
+5: `cd webappnamefolder.App`
+6: `dotnet run --urls=http://0.0.0.0:8080`

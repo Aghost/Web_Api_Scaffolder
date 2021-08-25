@@ -22,14 +22,10 @@ controller_dir="$project_name.App/Controllers"
 services_dir="$project_name.Business/Services"
 interfaces_dir="$project_name.Business/Interfaces"
 
-replaceFilenames() {
-    mv "$itemModel_dir/ITEMModel.cs" "$itemModel_dir/$item.cs"
-    mv "$itemModel_dir/CHILDITEMModel.cs" "$itemModel_dir/$childitem.cs"
-    mv "$dbcontext_dir/PROJECTNAMEDbContext.cs" "$dbcontext_dir/$project_name""DbContext.cs"
-    mv "$controller_dir/Controller.cs" "$controller_dir/$item""Controller.cs"
-    mv "$services_dir/Service.cs" "$services_dir/$item""Service.cs"
-    mv "$interfaces_dir/IService.cs" "$interfaces_dir/I$item""Service.cs"
-}
-
 cd $project_name
-replaceFilenames
+mv "$itemModel_dir/ITEMModel.cs" "$itemModel_dir/$item.cs"
+mv "$itemModel_dir/CHILDITEMModel.cs" "$itemModel_dir/$childitem.cs"
+mv "$dbcontext_dir/PROJECTNAMEDbContext.cs" "$dbcontext_dir/$project_name""DbContext.cs"
+mv "$controller_dir/Controller.cs" "$controller_dir/$item""Controller.cs"
+mv "$services_dir/Service.cs" "$services_dir/$item""Service.cs"
+mv "$interfaces_dir/IService.cs" "$interfaces_dir/I$item""Service.cs"
