@@ -21,30 +21,32 @@ namespace PROJECTNAME.Business.Services
         }
 
         // GET 1
-        public ITEM GetITEM(int Id) {
-            return _db.ITEMs.Find(Id);
+        public ITEM GetITEM(int id) {
+            return _db.ITEMs.Find(id);
         }
 
         // GET By Name
-        public ITEM GetITEM(string Name) {
-            return _db.ITEMs.FirstOrDefault(iTEM => iTEM.Name == Name);
+        public ITEM GetITEM(string name) {
+            return _db.ITEMs.FirstOrDefault(iTEM => iTEM.Name == name);
         }
 
         // ADD
-        public void AddITEM(ITEM iTEM) {
+        public void AddITEM(string iTEMname) {
+            var iTEM = new ITEM() { Name = iTEMname };
+
             _db.Add(iTEM);
             _db.SaveChanges();
         }
 
         // DELETE
-        public void DeleteITEM(int Id) {
-            var iTEMToDelete = _db.ITEMs.Find(Id);
+        public void DeleteITEM(int id) {
+            var iTEMToDelete = _db.ITEMs.Find(id);
 
             if (iTEMToDelete != null) {
                 _db.Remove(iTEMToDelete);
+            } else {
+                throw new InvalidOperationException("no iTEMs exists");
             }
-
-            throw new InvalidOperationException("no iTEMs exists");
         }
     }
 }

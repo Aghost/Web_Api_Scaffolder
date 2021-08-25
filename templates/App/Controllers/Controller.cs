@@ -21,10 +21,28 @@ namespace PROJECTNAME.App.Controllers
             return Ok(iTEMs);
         }
 
-        [HttpGet("/api/ITEMs/{id}")]
-        public ActionResult GetITEMs(int id) {
-            var iTEMs = _iTEMService.GetITEM(id);
-            return Ok(iTEMs);
+        [HttpGet("/api/ITEMs/{id:int}")]
+        public ActionResult GetITEM(int id) {
+            var iTEM = _iTEMService.GetITEM(id);
+            return Ok(iTEM);
+        }
+
+        [HttpGet("/api/ITEMs/{name}")]
+        public ActionResult GetITEM(string name) {
+            var iTEM = _iTEMService.GetITEM(name);
+            return Ok(iTEM);
+        }
+
+        [HttpGet("/api/ITEMs/add/{name}")]
+        public ActionResult AddITEM(string name) {
+            _iTEMService.AddITEM(name);
+            return Ok();
+        }
+
+        [HttpGet("/api/ITEMs/delete/{id:int}")]
+        public ActionResult DeleteITEM(int id) {
+            _iTEMService.DeleteITEM(id);
+            return Ok();
         }
 
     }

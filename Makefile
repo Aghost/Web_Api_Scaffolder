@@ -1,11 +1,11 @@
-# make webapp
+# make webapi
 
-PROJECT_NAME ?= make_webapp
+PROJECT_NAME ?= make_webapi
 
-.PHONY: test clear webapp
+.PHONY: test clear webapi
 
-webapp:
-	./0_main.sh DependencyInjectionProject CustomItem CustomChildItem
+webapi:
+	./0_main.sh UserRepositoryApi User UserFile
 
 test:
 	if [ "test" = "test" ]; then echo "banaan"; fi

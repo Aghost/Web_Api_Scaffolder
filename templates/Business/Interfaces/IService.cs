@@ -4,9 +4,9 @@ using PROJECTNAME.Core.Models;
 namespace PROJECTNAME.Business.Interfaces {
     public interface IITEMService {
         public List<ITEM> GetAllITEMs();
-        public ITEM GetITEM(int Id);
-        public ITEM GetITEM(string Name);
-        public void AddITEM(ITEM iTEM);
-        public void DeleteITEM(int Id);
+        public ITEM GetITEM(int id);
+        public ITEM GetITEM(string name);
+        public void AddITEM(string iTEMName);
+        public void DeleteITEM(int id);
     }
 }
