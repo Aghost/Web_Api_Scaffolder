@@ -19,7 +19,8 @@ fi
 itemModel_dir="$project_name.Core/Models"
 dbcontext_dir="$project_name.Data"
 controller_dir="$project_name.App/Controllers"
-services_dir="$project_name.Business"
+services_dir="$project_name.Business/Services"
+interfaces_dir="$project_name.Business/Interfaces"
 
 replaceFilenames() {
     mv "$itemModel_dir/ITEMModel.cs" "$itemModel_dir/$item.cs"
@@ -27,7 +28,7 @@ replaceFilenames() {
     mv "$dbcontext_dir/PROJECTNAMEDbContext.cs" "$dbcontext_dir/$project_name""DbContext.cs"
     mv "$controller_dir/Controller.cs" "$controller_dir/$item""Controller.cs"
     mv "$services_dir/Service.cs" "$services_dir/$item""Service.cs"
-    mv "$services_dir/IService.cs" "$services_dir/I$item""Services.cs"
+    mv "$interfaces_dir/IService.cs" "$interfaces_dir/I$item""Service.cs"
 }
 
 cd $project_name

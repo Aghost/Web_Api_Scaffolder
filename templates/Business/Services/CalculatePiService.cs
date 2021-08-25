@@ -1,6 +1,7 @@
 ﻿using System;
+using PROJECTNAME.Business.Interfaces;
 
-namespace PROJECTNAME.Business
+namespace PROJECTNAME.Business.Services
 {
     public class CalculatePiService : ICalculatePiService
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PROJECTNAME.Business
+namespace PROJECTNAME.Business.Interfaces
 {
     public interface ICalculatePiService
     {

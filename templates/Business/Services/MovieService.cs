@@ -3,8 +3,9 @@ using System.Linq;
 using System.Collections.Generic;
 using PROJECTNAME.Data;
 using PROJECTNAME.Core.Models;
+using PROJECTNAME.Business.Interfaces;
 
-namespace PROJECTNAME.Business
+namespace PROJECTNAME.Business.Services
 {
     public class MovieService : IMovieService
     {

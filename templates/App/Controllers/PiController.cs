@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PROJECTNAME.Data;
-using PROJECTNAME.Business;
+using PROJECTNAME.Business.Interfaces;
 
 namespace PROJECTNAME.Controllers
 {

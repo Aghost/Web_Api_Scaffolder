@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using PROJECTNAME.Core.Models;
 
-namespace PROJECTNAME.Business {
+namespace PROJECTNAME.Business.Interfaces {
     public interface IMovieService {
         public List<Movie> GetAll();
         public Movie Get(int Id);

@@ -15,7 +15,8 @@ using Microsoft.EntityFrameworkCore;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 using PROJECTNAME.Core;
 using PROJECTNAME.Data;
-using PROJECTNAME.Business;
+using PROJECTNAME.Business.Services;
+using PROJECTNAME.Business.Interfaces;
 
 namespace PROJECTNAME.App
 {
@@ -31,9 +32,7 @@ namespace PROJECTNAME.App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            // UNTESTED
-            services.AddCors();
+            services.AddCors(); // NOT TESTED
             services.AddControllers();
 
             services.AddDbContext<PROJECTNAMEDbContext>(opts => {
@@ -47,11 +46,10 @@ namespace PROJECTNAME.App
              * Singleton = only 1 instance will be used
             */
             services.AddTransient<IMovieService, MovieService>(); //Transient?
-            services.AddTransient<IITEMService, ITEMService>();
-            //services.AddTransient<ICHILDITEM, CHILDITEMService>(); // no service for yet
-
             services.AddSingleton<IEnglishNumberService, EnglishNumberService>();
             services.AddSingleton<ICalculatePiService, CalculatePiService>();
+
+            services.AddTransient<IITEMService, ITEMService>();
 
             /* services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PROJECTNAMEProject.Web", Version = "v1" });
@@ -72,7 +70,7 @@ namespace PROJECTNAME.App
             // app.UseStaticFiles();
             app.UseRouting();
 
-            // UNTESTED
+            // NOT TESTED
             app.UseCors(builder => builder
                     .WithOrigins(
                         "http://localhost:5000"
@@ -81,7 +79,7 @@ namespace PROJECTNAME.App
                     .AllowAnyMethod()
                     .AllowAnyHeader()
             );
-            // /UNTESTED
+            // /NOT TESTED
 
             app.UseAuthorization();
 

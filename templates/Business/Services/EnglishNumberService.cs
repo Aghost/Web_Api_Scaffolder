@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Text;
-using PROJECTNAME.Business;
+using PROJECTNAME.Business.Interfaces;
 
-namespace PROJECTNAME.Business
+namespace PROJECTNAME.Business.Services
 {
     public class EnglishNumberService : IEnglishNumberService
     {

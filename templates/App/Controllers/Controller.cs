@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using PROJECTNAME.Business;
+using PROJECTNAME.Business.Interfaces;
 
 namespace PROJECTNAME.App.Controllers
 {
